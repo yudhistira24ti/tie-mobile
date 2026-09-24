@@ -7,6 +7,8 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pertemuan.MainActivity
 import com.example.pertemuan.R
+import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class FourthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +24,31 @@ class FourthActivity : AppCompatActivity() {
         btnKembali.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
+        }
+
+        val btnShowSnackbar = findViewById<Button>(R.id.btnShowSnackbar)
+        btnShowSnackbar.setOnClickListener {
+            Snackbar.make(it, "Ini adalah Snackbar", Snackbar.LENGTH_SHORT)
+                .setAction("Tutup") {
+                    Log.e("Info Snackbar", "Snackbar ditutup")
+                }
+                .show()
+        }
+
+        val btnShowAlertDialog = findViewById<Button>(R.id.btnShowAlertDialog)
+        btnShowAlertDialog.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Konfirmasi")
+                .setMessage("Apakah Anda yakin ingin melanjutkan?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    dialog.dismiss()
+                    Log.e("Info Dialog", "Anda memilih Ya!")
+                }
+                .setNegativeButton("Batal") { dialog, _ ->
+                    dialog.dismiss()
+                    Log.e("Info Dialog", "Anda memilih Tidak!")
+                }
+                .show()
         }
     }
 }
