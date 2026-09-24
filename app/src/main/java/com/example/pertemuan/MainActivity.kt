@@ -13,7 +13,13 @@ class MainActivity : AppCompatActivity() {
 
         val btnToFourth = findViewById<Button>(R.id.btnToFourth)
         btnToFourth.setOnClickListener {
-            startActivity(Intent(this, FourthActivity::class.java))
+            val intent = Intent(this, FourthActivity::class.java)
+
+            intent.putExtra("name", "Politeknik Caltex Riau")
+            intent.putExtra("from", "Rumbai")
+            intent.putExtra("age", 25)
+
+            startActivity(intent)
         }
     }
 }
