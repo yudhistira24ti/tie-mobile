@@ -1,4 +1,10 @@
 <resources>
-    <string name="app_name">Pertemuan3</string>
+    <string name="app_name">Lay\'s Snack Zone</string>
     <string name="verif">Verification</string>
+    <string name="title_main">Lay\'s Snack Zone</string>
+    <string name="subtitle_main">Kelezatan Keripik Kentang No.1</string>
+    <string name="title_catalog">Katalog Varian Lay\'s</string>
+    <string name="subtitle_catalog">Pilih Rasa Favoritmu</string>
+    <string name="title_detail">Detail &amp; Pemesanan</string>
+    <string name="title_web">Website Resmi Lay\'s</string>
 </resources>

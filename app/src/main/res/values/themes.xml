@@ -2,7 +2,13 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Pertemuan3" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/lays_red</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/lays_yellow</item>
+        <item name="colorOnPrimaryContainer">@color/lays_text</item>
+        <item name="colorSecondary">@color/lays_yellow_dark</item>
+        <item name="android:statusBarColor">@color/lays_red_dark</item>
+        <item name="android:windowBackground">@color/lays_bg</item>
     </style>
 
     <style name="Theme.Pertemuan3" parent="Base.Theme.Pertemuan3" />

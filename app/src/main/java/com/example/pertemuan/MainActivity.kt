@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.pertemuan.databinding.ActivityMainBinding
 import com.example.pertemuan.pertemuan_4.FourthActivity
 import com.example.pertemuan.pertemuan_5.FifthActivity
+import com.example.pertemuan.pertemuan_5.WebViewActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,19 +17,27 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnToFourth.setOnClickListener {
-            val intent = Intent(this, FourthActivity::class.java)
+        // Set Toolbar tanpa tombol back untuk Halaman Awal
+        setSupportActionBar(binding.toolbar)
 
-            intent.putExtra("name", "Politeknik Caltex Riau")
-            intent.putExtra("from", "Rumbai")
-            intent.putExtra("age", 25)
-
+        // 1. Tombol ke Katalog Varian Lay's (FifthActivity)
+        binding.btnToCatalog.setOnClickListener {
+            val intent = Intent(this, FifthActivity::class.java)
             startActivity(intent)
         }
 
-        binding.button.setOnClickListener {
-            val i = Intent(this@MainActivity, FifthActivity::class.java)
-            startActivity(i)
+        // 2. Tombol ke Detail & Pemesanan Lay's (FourthActivity)
+        binding.btnToOrder.setOnClickListener {
+            val intent = Intent(this, FourthActivity::class.java)
+            intent.putExtra("product_name", "Lay's Barbecue Flavored")
+            intent.putExtra("product_price", "Rp 12.500")
+            startActivity(intent)
+        }
+
+        // 3. Tombol ke Website Resmi Lay's (WebViewActivity)
+        binding.btnToWebView.setOnClickListener {
+            val intent = Intent(this, WebViewActivity::class.java)
+            startActivity(intent)
         }
     }
 }
