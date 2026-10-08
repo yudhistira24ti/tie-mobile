@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.pertemuan.databinding.ActivityMainBinding
 import com.example.pertemuan.pertemuan_4.FourthActivity
 import com.example.pertemuan.pertemuan_5.FifthActivity
-import com.example.pertemuan.pertemuan_5.WebViewActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
@@ -18,37 +17,27 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Set Toolbar tanpa tombol back untuk Halaman Awal
-        setSupportActionBar(binding.toolbar)
-
-        // Ambil data username dari SharedPreferences
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
         val savedUsername = sharedPref.getString("username", null)
         if (!savedUsername.isNullOrEmpty()) {
-            binding.tvWelcomeUser.text = "Selamat Datang, $savedUsername!"
+            binding.tvWelcomeUser.text = "Selamat datang, $savedUsername"
         }
 
-        // 1. Tombol ke Katalog Varian Lay's (FifthActivity)
-        binding.btnToCatalog.setOnClickListener {
-            val intent = Intent(this, FifthActivity::class.java)
-            startActivity(intent)
-        }
-
-        // 2. Tombol ke Detail & Pemesanan Lay's (FourthActivity)
-        binding.btnToOrder.setOnClickListener {
+        binding.btnToFourth.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
-            intent.putExtra("product_name", "Lay's Barbecue Flavored")
-            intent.putExtra("product_price", "Rp 12.500")
+
+            intent.putExtra("name", "Politeknik Caltex Riau")
+            intent.putExtra("from", "Rumbai")
+            intent.putExtra("age", 25)
+
             startActivity(intent)
         }
 
-        // 3. Tombol ke Website Resmi Lay's (WebViewActivity)
-        binding.btnToWebView.setOnClickListener {
-            val intent = Intent(this, WebViewActivity::class.java)
-            startActivity(intent)
+        binding.button.setOnClickListener {
+            val i = Intent(this@MainActivity, FifthActivity::class.java)
+            startActivity(i)
         }
 
-        // 4. Fitur Logout melalui btnLogout
         binding.btnLogout.setOnClickListener {
             MaterialAlertDialogBuilder(this)
                 .setTitle("Konfirmasi Logout")

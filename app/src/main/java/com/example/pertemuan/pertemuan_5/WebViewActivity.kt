@@ -27,22 +27,18 @@ class WebViewActivity : AppCompatActivity() {
             insets
         }
 
-        // Setup Toolbar dengan tombol Back
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = getString(R.string.title_web)
-            subtitle = "www.lays.com"
+            title = "Web Merdeka"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 
-        // Setup WebView untuk Topik Lay's
         binding.webView.webViewClient = WebViewClient()
         binding.webView.settings.javaScriptEnabled = true
-        binding.webView.loadUrl("https://www.lays.com")
+        binding.webView.loadUrl("https://merdeka.com")
 
-        // Sembunyikan/tampilkan Toolbar saat web di-scroll
         binding.webView.setOnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
             if (scrollY > oldScrollY) {
                 binding.appBarLayout.setExpanded(false, true)
@@ -51,7 +47,6 @@ class WebViewActivity : AppCompatActivity() {
             }
         }
 
-        // Handling tombol Back untuk navigasi riwayat WebView
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 if (binding.webView.canGoBack()) {

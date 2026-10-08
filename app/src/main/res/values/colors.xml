@@ -5,15 +5,4 @@
     <color name="biru">#0F2EDC</color>
     <color name="hijau">#51C51F</color>
     <color name="merah_tua">#76060E</color>
-
-    <!-- Lay's Brand Colors -->
-    <color name="lays_yellow">#FFC107</color>
-    <color name="lays_yellow_dark">#F57F17</color>
-    <color name="lays_yellow_light">#FFFDE7</color>
-    <color name="lays_red">#E53935</color>
-    <color name="lays_red_dark">#B71C1C</color>
-    <color name="lays_bg">#FFFDF0</color>
-    <color name="lays_card">#FFFFFF</color>
-    <color name="lays_text">#212121</color>
-    <color name="lays_text_secondary">#757575</color>
 </resources>

@@ -15,7 +15,6 @@ class AuthActivity : AppCompatActivity() {
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Akses SharedPreferences "user_pref"
         val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
 
         binding.btnLogin.setOnClickListener {

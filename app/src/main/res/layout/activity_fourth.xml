@@ -1,215 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lays_bg"
     tools:context=".pertemuan_4.FourthActivity">
 
-    <!-- AppBar & Toolbar with Back Button -->
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/btnKembali"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kembali"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="268dp"
+        android:layout_height="243dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="#00BCD4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/lays_red"
-            app:title="@string/title_detail"
-            app:subtitle="Lengkapi Formulir Pemesanan"
-            app:titleTextColor="@color/white"
-            app:subtitleTextColor="@color/lays_yellow_light"
-            app:layout_scrollFlags="scroll|enterAlways" />
-    </com.google.android.material.appbar.AppBarLayout>
+            android:layout_height="match_parent"
+            android:layout_margin="20dp">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:padding="16dp"
-        android:clipToPadding="false">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Product Summary Card -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp"
-                app:cardBackgroundColor="@color/lays_yellow">
+                android:layout_marginTop="16dp"
+                android:text="Tombol 1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="16dp"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:src="@drawable/lays_brand_logo"
-                        android:contentDescription="Lay's Product" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="14dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tvProductName"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Lay\'s Barbecue Flavored"
-                            android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/lays_red_dark" />
-
-                        <TextView
-                            android:id="@+id/tvProductPrice"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="Rp 12.500 / bungkus (68g)"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/lays_text" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="Komposisi: Kentang Pilihan, Minyak Kelapa Sawit, Bumbu Barbeque Daging Panggang."
-                            android:textSize="11sp"
-                            android:textColor="@color/lays_text" />
-                    </LinearLayout>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Order Form Card -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/btnShowAlertDialog"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="4dp"
-                app:cardBackgroundColor="@color/lays_card">
+                android:layout_marginTop="12dp"
+                android:text="ShowAlertDialog"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn1" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="20dp">
+            <Button
+                android:id="@+id/btnShowSnackbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Tampilkan Snackbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnShowAlertDialog" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Form Pemesanan Snack"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/lays_text"
-                        android:layout_marginBottom="16dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <!-- Input Nama -->
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Nama Pemesan"
-                        android:layout_marginBottom="12dp"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    </com.google.android.material.card.MaterialCardView>
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etNamaPemesan"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="textPersonName"
-                            android:text="Budi Lay\'s Lover" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <!-- Input Jumlah -->
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Jumlah Bungkus"
-                        android:layout_marginBottom="12dp"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etJumlahBungkus"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="number"
-                            android:text="2" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <!-- Input Alamat Pengiriman -->
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Alamat Pengiriman / Catatan"
-                        android:layout_marginBottom="20dp"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/etAlamat"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="textMultiLine"
-                            android:lines="2"
-                            android:text="Kampus PCR, Rumbai, Pekanbaru" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <!-- Action Buttons -->
-                    <Button
-                        android:id="@+id/btnShowAlertDialog"
-                        android:layout_width="match_parent"
-                        android:layout_height="52dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="Konfirmasi Pesanan (Dialog)"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
-                        android:backgroundTint="@color/lays_red"
-                        app:cornerRadius="10dp" />
-
-                    <Button
-                        android:id="@+id/btnShowSnackbar"
-                        android:layout_width="match_parent"
-                        android:layout_height="52dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="Cek Promo Hari Ini (Snackbar)"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/lays_text"
-                        android:backgroundTint="@color/lays_yellow"
-                        app:cornerRadius="10dp" />
-
-                    <Button
-                        android:id="@+id/btnKembali"
-                        android:layout_width="match_parent"
-                        android:layout_height="52dp"
-                        android:text="Kembali ke Beranda"
-                        android:textSize="15sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
-                        android:backgroundTint="@color/lays_red_dark"
-                        app:cornerRadius="10dp" />
-
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

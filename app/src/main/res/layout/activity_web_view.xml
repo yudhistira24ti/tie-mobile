@@ -5,12 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lays_bg"
     tools:context=".pertemuan_5.WebViewActivity">
 
-    <!-- AppBar Layout dengan Toolbar Lay's -->
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout"
+        android:id= "@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -18,15 +16,15 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/lays_red"
-            app:title="@string/title_web"
-            app:subtitle="https://www.lays.com"
-            app:titleTextColor="@color/white"
-            app:subtitleTextColor="@color/lays_yellow_light"
-            app:layout_scrollFlags="scroll|enterAlways" />
+            android:background="?attr/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:subtitleTextColor="@android:color/white"
+            app:titleTextColor="@android:color/white"
+            app:layout_scrollFlags="scroll|enterAlways"/>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <!-- WebView Konten Lay's -->
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"
