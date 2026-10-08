@@ -57,7 +57,7 @@
                     <ImageView
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:src="@drawable/ic_lays_logo"
+                        android:src="@drawable/lays_brand_logo"
                         android:contentDescription="Lay's Product" />
 
                     <LinearLayout

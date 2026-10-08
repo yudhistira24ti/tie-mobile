@@ -7,6 +7,7 @@ import com.example.pertemuan.databinding.ActivityMainBinding
 import com.example.pertemuan.pertemuan_4.FourthActivity
 import com.example.pertemuan.pertemuan_5.FifthActivity
 import com.example.pertemuan.pertemuan_5.WebViewActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,6 +20,13 @@ class MainActivity : AppCompatActivity() {
 
         // Set Toolbar tanpa tombol back untuk Halaman Awal
         setSupportActionBar(binding.toolbar)
+
+        // Ambil data username dari SharedPreferences
+        val sharedPref = getSharedPreferences("user_pref", MODE_PRIVATE)
+        val savedUsername = sharedPref.getString("username", null)
+        if (!savedUsername.isNullOrEmpty()) {
+            binding.tvWelcomeUser.text = "Selamat Datang, $savedUsername!"
+        }
 
         // 1. Tombol ke Katalog Varian Lay's (FifthActivity)
         binding.btnToCatalog.setOnClickListener {
@@ -38,6 +46,28 @@ class MainActivity : AppCompatActivity() {
         binding.btnToWebView.setOnClickListener {
             val intent = Intent(this, WebViewActivity::class.java)
             startActivity(intent)
+        }
+
+        // 4. Fitur Logout melalui btnLogout
+        binding.btnLogout.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Konfirmasi Logout")
+                .setMessage("Apakah Anda yakin ingin keluar?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    val editor = sharedPref.edit()
+                    editor.clear()
+                    editor.apply()
+
+                    dialog.dismiss()
+
+                    val intent = Intent(this@MainActivity, AuthActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                .setNegativeButton("Tidak") { dialog, _ ->
+                    dialog.dismiss()
+                }
+                .show()
         }
     }
 }

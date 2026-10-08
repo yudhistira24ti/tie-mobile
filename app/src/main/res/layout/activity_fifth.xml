@@ -122,7 +122,7 @@
                         <ImageView
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:src="@drawable/ic_lays_logo"
+                            android:src="@drawable/lays_brand_logo"
                             android:contentDescription="Lay's Logo" />
 
                         <LinearLayout
@@ -196,7 +196,7 @@
                         <ImageView
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:src="@drawable/ic_lays_logo"
+                            android:src="@drawable/lays_brand_logo"
                             android:contentDescription="Lay's Logo" />
 
                         <LinearLayout
@@ -270,7 +270,7 @@
                         <ImageView
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:src="@drawable/ic_lays_logo"
+                            android:src="@drawable/lays_brand_logo"
                             android:contentDescription="Lay's Logo" />
 
                         <LinearLayout

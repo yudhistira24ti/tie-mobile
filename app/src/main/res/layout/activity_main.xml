@@ -56,7 +56,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/ic_lays_logo"
+                        android:src="@drawable/lays_brand_logo"
                         android:contentDescription="Lay's Logo" />
 
                     <LinearLayout
@@ -67,6 +67,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/tvWelcomeUser"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Selamat Datang di Lay\'s!"
@@ -136,6 +137,7 @@
                     android:id="@+id/btnToWebView"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
+                    android:layout_marginBottom="10dp"
                     android:text="3. Website Resmi Lay\'s (lays.com)"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -144,6 +146,17 @@
                     app:icon="@drawable/ic_link"
                     app:iconGravity="textStart"
                     app:iconPadding="12dp"
+                    app:cornerRadius="12dp" />
+
+                <Button
+                    android:id="@+id/btnLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="Logout / Keluar"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/black"
                     app:cornerRadius="12dp" />
             </LinearLayout>
 
@@ -176,7 +189,7 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/ic_lays_logo" />
+                        android:src="@drawable/lays_brand_logo" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -222,7 +235,7 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/ic_lays_logo" />
+                        android:src="@drawable/lays_brand_logo" />
 
                     <LinearLayout
                         android:layout_width="0dp"
