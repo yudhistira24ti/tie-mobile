@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.pertemuan.MainActivity
+import com.example.pertemuan.pertemuan_6.MainActivity
 import com.example.pertemuan.R
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar

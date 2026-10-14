@@ -1,11 +1,11 @@
-package com.example.pertemuan
+package com.example.pertemuan.pertemuan_6
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.pertemuan.AuthActivity
 import com.example.pertemuan.databinding.ActivityMainBinding
 import com.example.pertemuan.pertemuan_4.FourthActivity
-import com.example.pertemuan.pertemuan_5.FifthActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +21,12 @@ class MainActivity : AppCompatActivity() {
         val savedUsername = sharedPref.getString("username", null)
         if (!savedUsername.isNullOrEmpty()) {
             binding.tvWelcomeUser.text = "Selamat datang, $savedUsername"
+        }
+
+        // Button Ke Profil Developer
+        binding.btnToProfile.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
         }
 
         binding.btnToFourth.setOnClickListener {
