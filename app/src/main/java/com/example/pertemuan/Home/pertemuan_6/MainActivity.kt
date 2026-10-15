@@ -1,11 +1,12 @@
-package com.example.pertemuan.pertemuan_6
+package com.example.pertemuan.Home.pertemuan_6
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.pertemuan.AuthActivity
+import com.example.pertemuan.Home.pertemuan_4.FourthActivity
+import com.example.pertemuan.Home.pertemuan_7.SevenActivity
 import com.example.pertemuan.databinding.ActivityMainBinding
-import com.example.pertemuan.pertemuan_4.FourthActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
@@ -42,6 +43,12 @@ class MainActivity : AppCompatActivity() {
         binding.button.setOnClickListener {
             val i = Intent(this@MainActivity, FifthActivity::class.java)
             startActivity(i)
+        }
+
+        // Button Ke Pertemuan 7 (SevenActivity)
+        binding.btnToSeven.setOnClickListener {
+            val intent = Intent(this@MainActivity, SevenActivity::class.java)
+            startActivity(intent)
         }
 
         binding.btnLogout.setOnClickListener {

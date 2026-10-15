@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,9 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pertemuan3">
 
+
         <activity
-            android:name=".SplashScreenActivity"
-            android:exported="true">
+            android:name=".BaseActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -22,41 +26,56 @@
         </activity>
 
         <activity
+            android:name=".SplashScreenActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".AuthActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 
         <activity
-            android:name=".pertemuan_6.MainActivity"
+            android:name=".Home.pertemuan_6.MainActivity"
             android:exported="false" />
 
         <activity
-            android:name=".pertemuan_6.ProfileActivity"
+            android:name=".Home.pertemuan_6.ProfileActivity"
             android:exported="false" />
 
         <activity
-            android:name=".pertemuan_4.FourthActivity"
+            android:name=".Home.pertemuan_4.FourthActivity"
             android:exported="false" />
+
         <activity
-            android:name=".pertemuan_3.ThirdActivity"
+            android:name=".Home.pertemuan_3.ThirdActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
-            android:name=".pertemuan_3.ThirdResultActivity"
+            android:name=".Home.pertemuan_3.ThirdResultActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
-            android:name=".pertemuan_2.SecondActivity"
+            android:name=".Home.pertemuan_2.SecondActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
-            android:name=".pertemuan_6.FifthActivity"
+            android:name=".Home.pertemuan_6.FifthActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
         <activity
-            android:name=".pertemuan_6.WebViewActivity"
+            android:name=".Home.pertemuan_6.WebViewActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".Home.pertemuan_7.SevenActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.pertemuan.pertemuan_2
+package com.example.pertemuan.Home.pertemuan_2
 
 import android.os.Bundle
 import android.util.Log
@@ -22,7 +22,7 @@ class SecondActivity : AppCompatActivity() {
             insets
         }
 
-        // Inisialisasi komponen
+
         val inputNama: EditText = findViewById(R.id.inputNama)
         val btnSubmit: Button = findViewById(R.id.btnSubmit)
 

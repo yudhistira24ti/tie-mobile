@@ -1,11 +1,11 @@
-package com.example.pertemuan.pertemuan_4
+package com.example.pertemuan.Home.pertemuan_4
 
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.pertemuan.pertemuan_6.MainActivity
+import com.example.pertemuan.Home.pertemuan_6.MainActivity
 import com.example.pertemuan.R
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar

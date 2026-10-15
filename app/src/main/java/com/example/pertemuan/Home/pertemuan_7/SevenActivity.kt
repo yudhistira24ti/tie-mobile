@@ -1,25 +1,23 @@
-package com.example.pertemuan.pertemuan_6
+package com.example.pertemuan.Home.pertemuan_7
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 import com.example.pertemuan.R
-import com.example.pertemuan.databinding.ActivityFifthBinding
+import com.example.pertemuan.databinding.ActivitySevenBinding
 
-class FifthActivity : AppCompatActivity() {
+class SevenActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityFifthBinding
+    private lateinit var binding: ActivitySevenBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityFifthBinding.inflate(layoutInflater)
+        binding = ActivitySevenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -28,37 +26,43 @@ class FifthActivity : AppCompatActivity() {
             insets
         }
 
+
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Activity Fifth"
-            subtitle = "Ini adalah subtitle"
+            title = "Pertemuan 7"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 
-        binding.btnWebView.setOnClickListener {
-            startActivity(Intent(this, WebViewActivity::class.java))
+
+
+        replaceFragment(SatuFragment())
+
+        binding.btnFragment1.setOnClickListener {
+            replaceFragment(SatuFragment())
+        }
+
+        binding.btnFragment2.setOnClickListener {
+            replaceFragment(DuaFragment())
+        }
+
+        binding.btnFragment3.setOnClickListener {
+            replaceFragment(TigaFragment())
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
-        return true
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(binding.fragmentContainer.id, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home -> {
                 onBackPressedDispatcher.onBackPressed()
-                true
-            }
-            R.id.action_search -> {
-                Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show()
-                true
-            }
-            R.id.action_settings -> {
-                Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show()
                 true
             }
             else -> super.onOptionsItemSelected(item)
