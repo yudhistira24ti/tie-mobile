@@ -48,4 +48,6 @@ dependencies {
 
     implementation ("com.github.bumptech.glide:glide:5.0.9")
     annotationProcessor ("com.github.bumptech.glide:compiler:5.0.9")
+    implementation("androidx.gridlayout:gridlayout:1.0.0")
+    implementation("com.google.android.material:material:1.12.0")
 }
