@@ -15,6 +15,7 @@ import com.example.pertemuan.Home.pertemuan_6.FifthActivity
 import com.example.pertemuan.Home.pertemuan_6.ProfileActivity
 import com.example.pertemuan.Home.pertemuan_7.SevenActivity
 import com.example.pertemuan.Home.pertemuan_10.NinthActivity
+import com.example.pertemuan.Home.pertemuan_11.ElevenActivity
 import com.example.pertemuan.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -77,6 +78,10 @@ class HomeFragment : Fragment() {
 
         binding.btnPertemuan9.setOnClickListener {
             startActivity(Intent(requireContext(), NinthActivity::class.java))
+        }
+
+        binding.btnPertemuan11.setOnClickListener {
+            startActivity(Intent(requireContext(), ElevenActivity::class.java))
         }
 
         binding.btnLogout.setOnClickListener {
