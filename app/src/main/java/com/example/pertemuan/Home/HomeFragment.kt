@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.example.pertemuan.AuthActivity
+import com.example.pertemuan.Home.data.api.CatFactApiClient
 import com.example.pertemuan.Home.pertemuan_2.SecondActivity
 import com.example.pertemuan.Home.pertemuan_4.FourthActivity
 import com.example.pertemuan.Home.pertemuan_6.FifthActivity
@@ -18,6 +20,7 @@ import com.example.pertemuan.Home.pertemuan_10.NinthActivity
 import com.example.pertemuan.Home.pertemuan_11.ElevenActivity
 import com.example.pertemuan.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
 
@@ -103,6 +106,22 @@ class HomeFragment : Fragment() {
                     dialog.dismiss()
                 }
                 .show()
+        }
+        binding.btnRefresh.setOnClickListener {
+            loadCatFact()
+        }
+
+        loadCatFact()
+    }
+
+    private fun loadCatFact() {
+        lifecycleScope.launch {
+            try {
+                val response = CatFactApiClient.apiService.getCatFact()
+                binding.tvCatFact.text = "\"${response.fact}\""
+            } catch (e: Exception) {
+                binding.tvCatFact.text = "Gagal mengambil fakta kucing."
+            }
         }
     }
 
